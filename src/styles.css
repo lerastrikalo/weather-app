@@ -1,0 +1,83 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  color: rgb(13, 110, 253);
+  font-size: 55px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 26px;
+}
+
+p {
+  margin: 0;
+}
+
+.weather-image {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.icon-cloud-sun {
+  font-size: 150px;
+  margin: 30px 10px;
+}
+
+.card-description {
+  margin: 23px 0 23px 0;
+  color: #bcbcbc;
+}
+
+.search {
+  margin-top: 30px;
+}
+
+.col-6 {
+  width: 38%;
+}
+
+.button-location {
+  margin-left: 7px;
+}
+
+.celcium,
+.divider,
+.fahrenheit {
+  font-size: 35px;
+  position: relative;
+  bottom: 15px;
+}
+
+.celcium,
+.fahrenheit {
+  text-decoration: none;
+}
+
+.buttons-tpw {
+  width: 120px;
+}
+
+.weather-tpw {
+  color: #6c757d;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 735px;
+  padding: 10px;
+  margin: 10px 0 25px 0;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.icon-cards {
+  font-size: 30px;
+  margin: 7px 0;
+}
+
+.col-1 {
+  width: 8.07%;
+}

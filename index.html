@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="search">
+        <nav class="navbar">
+          <div class="container-fluid justify-content-start p-0">
+            <form class="d-flex col-6" id="search-form" role="search">
+              <input
+                class="form-control me-2 searchInput"
+                type="search"
+                placeholder="Type your city"
+                aria-label="Search"
+                id="city-input"
+                ;
+              />
+            </form>
+            <button type="button" class="btn btn-outline-primary buttonSearch">
+              Search
+            </button>
+            <button type="button" class="btn btn-primary button-location">
+              My geolocation
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="weather-image">
+            <i class="fa-solid fa-cloud-sun icon-cloud-sun"></i>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="todays-weather">
+            <div class="card border-0" style="width: 24.4rem">
+              <div class="card-body">
+                <h1 class="card-title m-0">
+                  <span id="temperature"> </span>
+                  <a href="#" class="celcium" id="celcium-link"> °C</a>
+                  <span class="divider"> | </span>
+                  <a href="#" class="fahrenheit" id="fahrenheit-link">°F</a>
+                </h1>
+
+                <h4 class="card-subtitle mb-2">
+                  <span id="city"></span>
+                </h4>
+                <div class="card-description">
+                  <div class="row">
+                    <div class="col-6">
+                      <p class="card-text" id="currentDayTime">Sunday 16:39</p>
+                    </div>
+                    <div class="col-6">
+                      <p class="card-text">
+                        Humidity: <span id="humidity"></span>%
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <p class="card-text">
+                        <span id="description-weather"></span>
+                      </p>
+                    </div>
+                    <div class="col-6">
+                      <p class="card-text">
+                        Wind: <span id="wind"></span> km/h
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="btn-group"
+                  role="group"
+                  aria-label="Basic outlined example"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary col-4 btn-sm buttons-tpw"
+                  >
+                    Temperature
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary col-4 btn-sm buttons-tpw"
+                  >
+                    Precipitation
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary col-4 btn-sm buttons-tpw"
+                  >
+                    Wind
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="weather-tpw">
+        <p>*here will be live data*</p>
+      </div>
+      <div class="weather-cards">
+        <div class="row">
+          <div class="col-1">
+            <div class="card text-center" style="width: 6rem">
+              <div class="card-body">
+                <p class="card-text">Mon</p>
+                <i class="fa-solid fa-cloud-sun-rain icon-cards"></i>
+                <p class="card-text">23°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="card text-center" style="width: 6rem">
+              <div class="card-body">
+                <p class="card-text">Tue</p>
+                <i class="fa-solid fa-cloud-sun-rain icon-cards"></i>
+                <p class="card-text">23°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="card text-center" style="width: 6rem">
+              <div class="card-body">
+                <p class="card-text">Wed</p>
+                <i class="fa-solid fa-cloud-showers-heavy icon-cards"></i>
+                <p class="card-text">23°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="card text-center" style="width: 6rem">
+              <div class="card-body">
+                <p class="card-text">Thu</p>
+                <i class="fa-solid fa-cloud-sun-rain icon-cards"></i>
+                <p class="card-text">23°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="card text-center" style="width: 6rem">
+              <div class="card-body">
+                <p class="card-text">Fri</p>
+                <i class="fa-solid fa-cloud-showers-heavy icon-cards"></i>
+                <p class="card-text">23°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="card text-center" style="width: 6rem">
+              <div class="card-body">
+                <p class="card-text">Sat</p>
+                <i class="fa-solid fa-sun icon-cards"></i>
+                <p class="card-text">23°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="card text-center" style="width: 6rem">
+              <div class="card-body">
+                <p class="card-text">Sun</p>
+                <i class="fa-solid fa-sun icon-cards"></i>
+                <p class="card-text">23°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/e4c5d86322.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
